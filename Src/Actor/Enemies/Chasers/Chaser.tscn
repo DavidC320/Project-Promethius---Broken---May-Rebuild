@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Src/Actor/Enemies/Scripts/Chaser.gd" type="Script" id=1]
+
+[sub_resource type="StandardMaterial3D" id=4]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="CylinderMesh" id=2]
+material = SubResource( 4 )
+
+[sub_resource type="CylinderShape3D" id=3]
+
+[node name="Chas_D" type="CharacterBody3D" groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource( 1 )
+speed = 15
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D( 1.71283, 0, 0, 0, 1, 0, 0, 0, 1.71283, 0, 0, 0 )
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D( 1, 0, 0, 0, 0.358537, 0, 0, 0, 1, 0, 0.356814, 0 )
+mesh = SubResource( 2 )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D( 1.7, 0, 0, 0, 0.479876, 0, 0, 0, 1.7, 0, 0.484276, 0 )
+shape = SubResource( 3 )
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="Death" type="Timer" parent="Timers"]
+wait_time = 10.0
+autostart = true
+
+[node name="Timer" type="Timer" parent="Timers"]
+wait_time = 0.2
+autostart = true
+
+[node name="Bullethit" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 24
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bullethit"]
+transform = Transform3D( 1.76778, 0, 0, 0, 0.479876, 0, 0, 0, 1.76778, 0, 0.484276, 0 )
+shape = SubResource( 3 )
+
+[connection signal="timeout" from="Timers/Death" to="." method="_on_Death_timeout"]
+[connection signal="timeout" from="Timers/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Bullethit" to="." method="_on_Bullethit_body_entered"]

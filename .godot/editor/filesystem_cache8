@@ -1,0 +1,76 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1666024132
+default_env.tres::Environment::1450208851167330116::1717111852::0::1::::<><>::
+icon.png::CompressedTexture2D::7832271659421216313::1666024136::1717111816::1::::<><>::
+::res://Art/::1666751810
+Player.tscn::PackedScene::-1::1717111786::0::1::::<><>::res://Art/Models/Player.glb
+::res://Art/Models/::1666751824
+Material_001.material::StandardMaterial3D::-1::1666984796::0::1::::<><>::
+Material_002.material::StandardMaterial3D::-1::1666984668::0::1::::<><>::
+Player.glb::PackedScene::7060955593854324367::1666984658::1717111822::1::::<><>::uid://b2d5reylqyghx::::res://Art/Models/Player_Base Color.png<>uid://ccmc35fbmwlsp::::res://Art/Models/Player_Icosphere Base Color.png
+Player_Base Color.png::CompressedTexture2D::4289564711152359997::1717111818::1717111826::1::::<><>::
+Player_Icosphere Base Color.png::CompressedTexture2D::4938164607412730095::1717111820::1717111826::1::::<><>::
+::res://Art/Music/::1667268546
+Line Noise - Magenta Moon (Part II).mp3::AudioStreamMP3::553889300709944058::1667297496::1717111814::1::::<><>::
+Orquestra Popular De Paio Pires - Nothing Happens.mp3::AudioStreamMP3::8509922966997821970::1667297602::1717111814::1::::<><>::
+Orquestra Popular De Paio Pires - Tragedy.mp3::AudioStreamMP3::7724414975530836971::1667297578::1717111814::1::::<><>::
+Wolf Asylum - Hubris.mp3::AudioStreamMP3::3304481597312763815::1667297488::1717111814::1::::<><>::
+Wolf Asylum - Psyche.mp3::AudioStreamMP3::2195356869502481782::1667297520::1717111816::1::::<><>::
+::res://Art/sfx/::1667271116
+219405__darkadders__cherno-alpha-distortion.mp3::AudioStreamMP3::3578395927245043005::1667269678::1717111816::1::::<><>::
+337845__newagesoup__small-metal-hit-05.wav::AudioStreamWAV::4249624022697331757::1667273392::1717111818::1::::<><>::
+347168__davidsraba__explosion-sound.wav::AudioStreamWAV::7765665064219861143::1667273518::1717111818::1::::<><>::
+388607__suzenako__ruido2.wav::AudioStreamWAV::1460174536224201606::1667270088::1717111818::1::::<><>::
+404901__wizardoz__gun-shot (1).ogg::AudioStreamOggVorbis::7876221569775568325::1667269560::1717111816::1::::<><>::
+456708__dagro__distorted-kick.wav::AudioStreamWAV::6058334840215675054::1667269752::1717111818::1::::<><>::
+607206__fupicat__explode.wav::AudioStreamWAV::8839858860414909857::1667273414::1717111818::1::::<><>::
+::res://Info/::1666024156
+Plan.md::TextFile::-1::1666998628::0::1::::<><>::
+README.md::TextFile::-1::1666552238::0::1::::<><>::
+::res://Info/Brainstorm/::1666059888
+::res://Info/Brainstorm/Enemeis/::1666059894
+Chasers.md::TextFile::-1::1666348388::0::1::::<><>::
+Hazards.md::TextFile::-1::1666552564::0::1::::<><>::
+Turrets.md::TextFile::-1::1666348316::0::1::::<><>::
+::res://Src/::1666106738
+::res://Src/Actor/::1666106876
+::res://Src/Actor/Audio/::1667316892
+Audio_destroy.gd::GDScript::-1::1717111784::0::1::::<>AudioStreamPlayer3D<>::
+Audio_destroy.tscn::PackedScene::-1::1717111784::0::1::::<><>::res://Src/Actor/Audio/Audio_destroy.gd
+::res://Src/Actor/Enemies/::1666106934
+::res://Src/Actor/Enemies/Chasers/::1666193690
+Chaser.tscn::PackedScene::-1::1717111786::0::1::::<><>::res://Src/Actor/Enemies/Scripts/Chaser.gd
+Detonator.tscn::PackedScene::-1::1717111786::0::1::::<><>::res://Src/Actor/Enemies/Scripts/Detonator.gd
+Ranger.tscn::PackedScene::-1::1717111786::0::1::::<><>::res://Src/Actor/Enemies/Turrets/Turret_Gun.tscn<>res://Src/Actor/Enemies/Scripts/Ranger.gd
+::res://Src/Actor/Enemies/Hazards/::1666193700
+Bullet.tscn::PackedScene::-1::1717111786::0::1::::<><>::res://Src/Actor/Enemies/Scripts/Bullet.gd
+Saw.tscn::PackedScene::-1::1717111786::0::1::::<><>::res://Src/Actor/Enemies/Scripts/Saw.gd<>res://Art/sfx/456708__dagro__distorted-kick.wav
+Saw_spawner.tscn::PackedScene::-1::1717111786::0::1::::<><>::res://Src/Actor/Enemies/Scripts/Saw_spawner.gd
+::res://Src/Actor/Enemies/Scripts/::1667102312
+Base.gd::GDScript::-1::1717111784::0::1::::Chaser<>CharacterBody3D<>::
+Bullet.gd::GDScript::-1::1717111784::0::1::::bullet<>CharacterBody3D<>::
+Chaser.gd::GDScript::-1::1717111784::0::1::::<>Chaser<>::
+Detonator.gd::GDScript::-1::1717111784::0::1::::<>Chaser<>::
+Ranger.gd::GDScript::-1::1717111784::0::1::::<>Chaser<>::
+Saw.gd::GDScript::-1::1717111784::0::1::::<>CharacterBody3D<>::
+Saw_spawner.gd::GDScript::-1::1717111784::0::1::::<>Node3D<>::
+Turret_Gun.gd::GDScript::-1::1717111784::0::1::::<>CharacterBody3D<>::
+::res://Src/Actor/Enemies/Turrets/::1666193724
+Turret.gd::GDScript::-1::1717111784::0::1::::<>CharacterBody3D<>::
+Turret.tscn::PackedScene::-1::1717111784::0::1::::<><>::res://Src/Actor/Enemies/Turrets/Turret.gd
+Turret_Gun.tscn::PackedScene::-1::1717111784::0::1::::<><>::res://Src/Actor/Enemies/Scripts/Turret_Gun.gd<>res://Art/sfx/404901__wizardoz__gun-shot (1).ogg
+Turret_Laser.tscn::PackedScene::-1::1717111784::0::1::::<><>::
+::res://Src/Actor/Player/::1666106928
+Gun.gd::GDScript::-1::1717111786::0::1::::<>CharacterBody3D<>::
+Gun.tscn::PackedScene::-1::1717111786::0::1::::<><>::res://Src/Actor/Player/Gun.gd
+Player.gd::GDScript::-1::1717111786::0::1::::<>CharacterBody3D<>::
+Player.tscn::PackedScene::-1::1717111786::0::1::::<><>::res://Src/Actor/Player/Player.gd<>res://Art/Player.tscn
+::res://Src/Levels/::1666200776
+Music_player.gd::GDScript::-1::1717111784::0::1::::<>AudioStreamPlayer<>::
+Score.gd::GDScript::-1::1717111784::0::1::::<>Label<>::
+Test.gd::GDScript::-1::1717111784::0::1::::<>Node<>::
+Test.tscn::PackedScene::2288986859894567944::1717111852::0::1::::<><>::res://Src/Actor/Player/Player.tscn<>res://Src/Levels/Test.gd<>uid://bq8nwm1oe0806::::res://Art/sfx/219405__darkadders__cherno-alpha-distortion.mp3<>res://Src/Actor/Enemies/Hazards/Saw_spawner.tscn<>uid://dx7dgiupss714::::res://Art/sfx/607206__fupicat__explode.wav<>res://Src/Levels/Score.gd<>uid://div0msul4ci60::::res://Art/sfx/347168__davidsraba__explosion-sound.wav<>uid://b1ssxl6bqcrhl::::res://Art/sfx/337845__newagesoup__small-metal-hit-05.wav<>res://Src/Levels/Music_player.gd
+::res://Src/Scenes/::1666106916
+Main.tscn::PackedScene::-1::1717111784::0::1::::<><>::
+::res://Src/Themes/::1666287886
+score.tres::Theme::-1::1717111784::0::1::::<><>::

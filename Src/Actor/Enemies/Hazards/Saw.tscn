@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Src/Actor/Enemies/Scripts/Saw.gd" type="Script" id=1]
+[ext_resource path="res://Art/sfx/456708__dagro__distorted-kick.wav" type="AudioStream" id=2]
+
+[sub_resource type="StandardMaterial3D" id=1]
+albedo_color = Color( 0.424805, 0.338516, 0.338516, 1 )
+
+[sub_resource type="CylinderMesh" id=2]
+material = SubResource( 1 )
+
+[sub_resource type="BoxMesh" id=4]
+
+[sub_resource type="StandardMaterial3D" id=5]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="CylinderMesh" id=6]
+material = SubResource( 5 )
+
+[sub_resource type="CylinderShape3D" id=3]
+
+[node name="Saw" type="CharacterBody3D" groups=["Enemy"]]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+collision_layer = 16
+collision_mask = 0
+script = ExtResource( 1 )
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D( 8.69555, 0, 0, 0, 1, 0, 0, 0, 8.69555, 0, 0, 0 )
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D( 2.1, 0, 0, 0, 0.358537, 0, 0, 0, 2.1, 0, 0.356814, 0 )
+mesh = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 4 )
+
+[node name="MeshInstance3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D( -4.37114e-09, 0, -1, 0, 1, 0, 0.1, 0, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 4 )
+
+[node name="MeshInstance4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D( 0.24455, 0, 0, 0, 1, 0, 0, 0, 0.24455, 0, 1.23472, 0 )
+mesh = SubResource( 6 )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D( 17.3219, 0, 0, 0, 1.29567, 0, 0, 0, 17.3219, 0, 0.484276, 0 )
+shape = SubResource( 3 )
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5 )
+aabb = AABB( -20, -1, -20, 30, 2, 30 )
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="Search" type="Timer" parent="Timers"]
+wait_time = 0.1
+autostart = true
+
+[node name="wait" type="Timer" parent="Timers"]
+
+[node name="Found" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -19.016
+
+[connection signal="camera_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_VisibilityNotifier_camera_exited"]
+[connection signal="timeout" from="Timers/Search" to="." method="_on_Search_timeout"]
+[connection signal="timeout" from="Timers/wait" to="." method="_on_wait_timeout"]

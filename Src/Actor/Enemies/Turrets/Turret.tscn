@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Src/Actor/Enemies/Turrets/Turret.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape3D" id=3]
+
+[sub_resource type="StandardMaterial3D" id=2]
+albedo_color = Color( 0.372549, 0.34902, 0.34902, 1 )
+metallic = 0.58
+
+[sub_resource type="BoxMesh" id=1]
+material = SubResource( 2 )
+
+[sub_resource type="CylinderShape3D" id=4]
+
+[node name="Turret_Gunner" type="CharacterBody3D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 1 )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D( 1.75, 0, 0, 0, 0.55, 0, 0, 0, 1.7, 0, 0.5, 0 )
+shape = SubResource( 3 )
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D( 1.71283, 0, 0, 0, 1, 0, 0, 0, 1.71283, 0, 0, 0 )
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D( 1, 0, 0, 0, 0.179268, 0, 0, 0, 1, 0, 0.156814, 0 )
+mesh = SubResource( 1 )
+
+[node name="Bullethit" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 24
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bullethit"]
+transform = Transform3D( 1.76778, 0, 0, 0, 0.479876, 0, 0, 0, 1.76778, 0, 0.484276, 0 )
+shape = SubResource( 4 )
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="death" type="Timer" parent="Timers"]
+wait_time = 10.0
+autostart = true
+
+[node name="arm" type="Timer" parent="Timers"]
+wait_time = 4.0
+autostart = true
+
+[connection signal="body_entered" from="Bullethit" to="." method="_on_Bullethit_body_entered"]
+[connection signal="timeout" from="Timers/death" to="." method="_on_death_timeout"]
+[connection signal="timeout" from="Timers/arm" to="." method="_on_arm_timeout"]

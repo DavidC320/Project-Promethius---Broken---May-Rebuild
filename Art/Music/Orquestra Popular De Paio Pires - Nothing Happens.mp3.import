@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dtijgnjh5ejnu"
+path="res://.godot/imported/Orquestra Popular De Paio Pires - Nothing Happens.mp3-a127c72c08bc50b0c95b8a4835c5e45a.mp3str"
+
+[deps]
+
+source_file="res://Art/Music/Orquestra Popular De Paio Pires - Nothing Happens.mp3"
+dest_files=["res://.godot/imported/Orquestra Popular De Paio Pires - Nothing Happens.mp3-a127c72c08bc50b0c95b8a4835c5e45a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
